@@ -14,7 +14,7 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 // const int MAXN = ;
 const int INF = 1e9 + 7;
-int count(int i, const string &s)
+int ones(int i, const string &s)
 {
     if(i == (int) s.size())
         return 0;
@@ -23,7 +23,7 @@ int count(int i, const string &s)
         cout << "Error";
         exit(0);
     }
-    return count(i + 1, s) + s[i] - '0';
+    return ones(i + 1, s) + s[i] - '0';
 }
 int main()
 {
@@ -31,6 +31,6 @@ int main()
     cin.tie(0);
     string s;
     cin >> s;
-    cout << count(0, s);
+    cout << ones(0, s);
     return 0;
 }
