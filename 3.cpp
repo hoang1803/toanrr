@@ -21,8 +21,8 @@ int m(int i, const string &s)
         cout << "Error";
         exit(0);
     }
-    if(i == (int) s.size())
-        return 9;
+    if(i == (int) s.size() - 1)
+        return s[i] - '0';
     if(!('0' <= s[i] && s[i] <= '9'))
     {
         cout << "Error";
