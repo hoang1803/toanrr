@@ -37,6 +37,6 @@ int main()
     cin.tie(0);
     long long a, b;
     cin >> a >> b;
-    cout << gcd(a, b) << " " << __gcd(a, b);
+    cout << gcd(a, b);
     return 0;
 }
