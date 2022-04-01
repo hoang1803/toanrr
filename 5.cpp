@@ -20,19 +20,27 @@ void create(int i, string s = "")
 {
     if (i > N)
         return;
-    save.push_back(s);
     if(i == 0)
     {
-        create(i + 1, s + '0');
-        create(i + 1, s + '1');
-        create(i + 2, '0' + s + '0');
-        create(i + 2, '1' + s + '1');
+        save.push_back("");
+        create(i + 1, "");
+        create(i + 2, "");
+        return ;
     }
-    else
+    if(i == 1)
     {
-        create(i + 2, '0' + s + '0');
-        create(i + 2, '1' + s + '1');
+        save.push_back("0");
+        save.push_back("1");
+        create(i + 2, "0");
+        create(i + 2, "1");
+        return ;
     }
+    string a = '0' + s + '0';
+    string b = '1' + s + '1';
+    save.push_back(a);
+    create(i + 2, a);
+    save.push_back(b);
+    create(i + 2, b);
 }
 bool cmp(const string &x, const string &y)
 {
